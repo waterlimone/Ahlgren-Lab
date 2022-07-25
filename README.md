@@ -3,7 +3,7 @@
 1. Open up a linux terminal and clone the repository.
 > `git clone https://github.com/waterlimone/Ahlgren-Lab`
 2. Navigate to the Ahlgren-Lab Directory.
-> `cd Ahlgren-lab`
+> `cd Ahlgren-Lab`
 3. Launch the installation script.
 > `./install.sh`
     - If this doesn't work check file permissions.
