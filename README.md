@@ -9,4 +9,4 @@
     - If this doesn't work check file permissions.
 4. Wait for the script to finish installing. Then check if qiime2 is installed.
 > `conda env list`
-You shoudl see and environment listed as qiime2.
+    - You should see and environment listed as qiime2.
