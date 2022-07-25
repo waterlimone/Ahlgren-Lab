@@ -7,8 +7,8 @@ rm Miniconda.sh
 
 # Creates a new line in .bashrc profile and adds conda to the $PATH
 echo >> ~/.bashrc
-echo PATH="$HOME/conda/bin:$PATH" >> ~/.bashrc
-export PATH="$HOME/conda/bin:$PATH"
+printf "%s" "export \"PATH=\$HOME/conda/bin:\$PATH\"" >> ~/.bashrc
+source ~/.bashrc
 
 # Installs mamba a faster conda implementation
 conda install -c conda-forge mamba --yes
