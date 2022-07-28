@@ -19,15 +19,15 @@ def cut_adapt_trim_log(path):
             base_percentage_kept.append((temp["basepair_counts"]["output"] / temp["basepair_counts"]["input"]) * 100)
 
 
-    print(read_percentage_kept[1])
-    print(base_percentage_kept[1])
+    # print(read_percentage_kept[1])
+    # print(base_percentage_kept[1])
 
     length = 0
     avgReadPercentage = 0
     avgBasePercentage = 0
     for i, percent in enumerate(read_percentage_kept):
-        print("Reads Kept: ", percent, "%")
-        print("Bases Kept: ", base_percentage_kept[i], "%")
+        # print("Reads Kept: ", percent, "%")
+        # print("Bases Kept: ", base_percentage_kept[i], "%")
 
         avgReadPercentage += percent
         avgBasePercentage += base_percentage_kept[i]
@@ -37,8 +37,8 @@ def cut_adapt_trim_log(path):
     avgReadPercentage = avgReadPercentage / length
     avgBasePercentage = avgBasePercentage / length
 
-    print("\n")
-    print("Average Read Percentage: ", avgReadPercentage, "%")
-    print("Average Base Percentage: ", avgBasePercentage, "%")
+    # print("\n")
+    # print("Average Read Percentage: ", avgReadPercentage, "%")
+    # print("Average Base Percentage: ", avgBasePercentage, "%")
     
     return avgReadPercentage, avgBasePercentage
