@@ -7,13 +7,13 @@ import json
 import os
 
 def cut_adapt_trim_log(path):
-    os.chdir(path)
-    files = os.listdir()
+    # os.chdir(path)
+    files = os.listdir(path)
 
     read_percentage_kept = []
     base_percentage_kept = []
     for file in files:
-        with open(file, "r") as read_file:
+        with open(path + "/" + file, "r") as read_file:
             temp = json.load(read_file)
             read_percentage_kept.append((temp["read_counts"]["output"] / temp["read_counts"]["input"]) * 100)
             base_percentage_kept.append((temp["basepair_counts"]["output"] / temp["basepair_counts"]["input"]) * 100)
