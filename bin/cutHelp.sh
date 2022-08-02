@@ -6,8 +6,10 @@ mkdir ${workingDir}/trimmed                  # Makes a the trimmed directory
 mkdir ${workingDir}/trimLog                  # Creates trimLog directory
 conda activate qiime2-2022.2                 # Activates qiime2 environment
 
+binDir=pwd                          # binDir is now the full path of /bin
+cd $1                               # Moves to the read directory 
 for item in `ls *R1_001.fastq.gz`   # Loops through every file in directory with
-    do                              # ending R1_001.fastq.gz (only forward reads)
+    do                              # Ending R1_001.fastq.gz (only forward reads)
 
     filestem=`basename $item R1_001.fastq.gz`   # Collects base of forward read file
                                                 # name before R1_001.fastq.gz and puts
@@ -32,7 +34,7 @@ for item in `ls *R1_001.fastq.gz`   # Loops through every file in directory with
     #       -o: Specify directory and filename for forward read output                   #
     #       -p: Specify directory and filename for backward read output                  #
     cutadapt --no-indels --pair-filter=any --error-rate=0.2 --discard-untrimmed \
-    -j 4 -q $1 --json ${workingDir}/trimLog/${filestem}.json\
+    -j 4 -q $2 --json ${workingDir}/trimLog/${filestem}.json\
     -g ^CGTACTACAATGCTACGG -G ^GGACCTCACCCTTATCAGGG \
     -o ${workingDir}/trimmed/${filestem}R1_001.fastq.gz \
     -p ${workingDir}/trimmed/${filestem}R2_001.fastq.gz $R1 $R2
@@ -44,3 +46,4 @@ fastqc -t 4 -o ${workingDir}/trimmed/fastqc/ ${workingDir}/trimmed/*fastq.gz # R
                                                                              # sends the output to the fastqc/ directory
 
 conda deactivate # Deactivates qiime2 environment
+cd binDir
