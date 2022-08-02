@@ -3,6 +3,6 @@ echo ___________________________
 echo Installing lab environment.
 echo ---------------------------
 
-./condaInstall.sh
+./bin/condaInstall.sh
 
-./environmentInstall.sh
+./bin/environmentInstall.sh
