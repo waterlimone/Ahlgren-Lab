@@ -8,6 +8,8 @@ rm Miniconda.sh
 # Creates a new line in .bashrc profile and adds conda to the $PATH
 echo >> ~/.bashrc
 printf "%s" "export \"PATH=\$HOME/conda/bin:\$PATH\"" >> ~/.bashrc
+printf "%s" "export \"PATH=\$HOME/ahlgrenEnvironment/bin:\$PATH\"" >> ~/.bashrc
+
 source ~/.bashrc
 
 # Installs mamba a faster conda implementation
