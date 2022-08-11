@@ -15,10 +15,10 @@ for qual in {22..32}                             # Repeat cutadapt trims for
     mkdir ${workingDir}/trimLog                  # Creates trimLog directory
     mkdir ${workingDir}/qiimeArchives            # Creates archives for the rest of the qiime2 pipeline.
 
-    for item in `ls *R1_001.fastq.gz`   # Loops through every file in directory with
+    for item in $(ls *R1_001.fastq.gz)   # Loops through every file in directory with
         do                              # Ending R1_001.fastq.gz (only forward reads)
 
-        filestem=`basename $item R1_001.fastq.gz`   # Collects base of forward read file
+        filestem=$(basename $item R1_001.fastq.gz)  # Collects base of forward read file
                                                     # name before R1_001.fastq.gz and puts
                                                     # it in variable filestem
 
