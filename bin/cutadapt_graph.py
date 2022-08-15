@@ -21,14 +21,14 @@ def cutadapt_graph(path, folder):
         score.append(qual_score)
     
     reads_graph = plt.figure()
-    plt.plot(score, reads, figure = reads_graph)
+    plt.bar(score, reads, figure = reads_graph)
     plt.title("Reads Kept Over Quality Score Cutoffs", figure = reads_graph)
     plt.xlabel("Quality Score Cutoff", figure = reads_graph)
     plt.ylabel("Percentage of Reads Kept", figure = reads_graph)
     reads_graph.savefig("./cutadapt_figures/reads_percentage_passed.png")
 
     bases_graph = plt.figure()
-    plt.plot(score, bases, figure = bases_graph)
+    plt.bar(score, bases, figure = bases_graph)
     plt.title("Bases Kept Over Quality Score Cutoffs", figure = bases_graph)
     plt.xlabel("Quality Score Cutoff", figure = bases_graph)
     plt.ylabel("Percentage of Bases Kept", figure = bases_graph)

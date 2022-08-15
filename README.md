@@ -28,3 +28,6 @@
     4. R1 or R2 is forward and backward read respectively.
     5. 
     6. fastq.gz is the fastq file extension.
+
+2. Multiple scripts in the ahlgrenEnvironSetup/bin folder should already be in the PATH and ready to use.
+    - Further encapsulation will be done to simplify and hide script usage from end user.

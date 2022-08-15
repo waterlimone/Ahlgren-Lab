@@ -12,5 +12,6 @@ qiime quality-filter q-score \
 --i-demux sample_trimmed_joined.qza \
 --p-min-quality "$qual" \
 --p-quality-window 4 \
+--p-min-length-fraction 0.75 \
 --o-filtered-sequences "${qualDir}/"sample_trimmed_joined_quality_filtered.qza \
 --o-filter-stats "${qualDir}/"quality_filtered_stats.qza

@@ -16,11 +16,10 @@ os.chdir(basePath)
 directories = glob.glob("qual*")
 directories.sort()
 
-
 def extract_averages(path):
-    cmd = "qiime tools export --input-path " + path + "quality_filtered_stats.qza --output-path " + path
-
-    os.system(cmd)
+    if(os.path.isfile(path + 'stats.csv') == False):
+        cmd = "qiime tools export --input-path " + path + "quality_filtered_stats.qza --output-path " + path
+        os.system(cmd)
 
     data = []
     with open(path + 'stats.csv') as csvFile:
@@ -50,11 +49,11 @@ for i in directories:
 print(avgsRetained)
 print(xAxis)
 
-os.mkdir("qiimeReadsGraph")
+# os.mkdir("qiimeReadsGraph")
 
 qiime_graph = plt.figure()
-plt.plot(xAxis, avgsRetained, figure = qiime_graph)
-plt.title("Reads Kept Over Quality Score Cutoffs", figure = qiime_graph)
+plt.bar(xAxis, avgsRetained, figure=qiime_graph)
+plt.title("Reads Kept Over Quality Score Cutoffs", figure=qiime_graph)
 plt.xlabel("Quality Score Cutoff", figure = qiime_graph)
 plt.ylabel("Percentage of Reads Kept", figure = qiime_graph)
 qiime_graph.savefig("./qiimeReadsGraph/qiimeReadsGraph.png")
