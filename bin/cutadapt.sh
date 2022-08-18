@@ -9,9 +9,9 @@ conda activate qiime2-2022.2
  # --i-demultiplexed-sequences  | Input sequence files after import.
  # --o-trimmed-sequences        | Output of the trimmed sequences.
  # --p-cores                    | Number of cores to be used.
- # --p-front-f                  | Forward adapter to be trimmed.
- # --p-front-r                  | Reverse adapter to be trimmed.
- # --p-error-rate               | Allowd percentage error off of the 
+ # --p-front-f                  | Forward primer/adapter to be trimmed.
+ # --p-front-r                  | Reverse primer/adapter to be trimmed.
+ # --p-error-rate               | Allowed percentage error off of the 
  #                              | primer/adapter to be matched and trimmed.
  # --p-no-indels                | Doesn't allow indels in the primer/adapter.              
 qiime cutadapt trim-paired \
