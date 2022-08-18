@@ -1,5 +1,6 @@
 #!/bin/bash -i
 
+# Outdated shell script do not use for now.
 
 conda activate qiime2-2022.2                     # Activates qiime2 environment
 binDir=$2                                        # Bin directory
