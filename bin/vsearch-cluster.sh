@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/bash -i
 
 # Clusters the feature table ASVs into OTUs.
 
 # Makes the OTUs directory.
-mkdir "$1"/OTUs
+mkdir "$1"/qiimeRecords/dada2/OTUs
 
 # Activates qiime environemnt.
 conda activate qiime2-2022.2
@@ -17,9 +17,11 @@ conda activate qiime2-2022.2
  # --o-clustered-table      | Path to the OTU feature table.
  # --o-clustered-sequences  | Path to the OTU feature sequences.
 qiime vsearch cluster-features-de-novo \
---i-sequences "$1"/dada2/sample_representative_sequences.qza \
---i-table "$1"/dada2/sample_table.qza \
+--i-sequences "$1"/qiimeRecords/dada2/sample_representative_sequences.qza \
+--i-table "$1"/qiimeRecords/dada2/sample_table.qza \
 --p-perc-identity 0.98 \
---p-threads 4 \
---o-clustered-table "$1"/OTUs/sample_OTU_table.qza \
---o-clustered-sequences "$1"/OTUs/sample_OTU_sequences.qza
+--p-threads 6 \
+--o-clustered-table "$1"/qiimeRecords/dada2/OTUs/"$1"_OTU_table.qza \
+--o-clustered-sequences "$1"/qiimeRecords/dada2/OTUs/"$1"_OTU_sequences.qza
+
+qiime tools export --input-path "$1"/qiimeRecords/dada2/OTUs/"$1"_OTU_table.qza --output-path "$1"/qiimeRecords/dada2/OTUs/
