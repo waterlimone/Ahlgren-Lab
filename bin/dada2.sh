@@ -1,4 +1,4 @@
-#!/bin/bash -i
+#!/usr/bin/env -S bash -i
 
 conda activate qiime2-2022.2
 
@@ -14,6 +14,7 @@ mkdir "$1"/qiimeRecords/dada2
 qiime dada2 denoise-paired --i-demultiplexed-seqs "$1"/qiimeRecords/sample_trimmed.qza \
 --p-trunc-len-f 0 \
 --p-trunc-len-r 0 \
+--p-n-threads "$2" \
 --o-table "$1"/qiimeRecords/dada2/sample_table.qza \
 --o-representative-sequences "$1"/qiimeRecords/dada2/sample_representative_sequences.qza \
 --o-denoising-stats "$1"/qiimeRecords/dada2/sample_denoising_stats.qza

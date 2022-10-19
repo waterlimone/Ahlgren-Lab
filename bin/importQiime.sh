@@ -1,4 +1,4 @@
-#!/bin/bash -i
+#!/usr/bin/env -S bash -i
 
 # Imports the fastq.gz files to the qiime .qza archive format.
 

@@ -1,4 +1,4 @@
-#!/bin/bash -i
+#!/usr/bin/env -S bash -i
 
 # Clusters the feature table ASVs into OTUs.
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 dir="$1"
 threads="$2"
@@ -12,7 +12,7 @@ echo "Trimming adapters..."
 cutadapt.sh "$dir" "$threads" "$forwardAdapter" "$backwardAdapter"
 
 echo "Running dada2"
-dada2.sh "$dir"
+dada2.sh "$dir" "$threads"
 
 echo "Clustering OTu's with vsearch-cluster"
 vsearch-cluster.sh "$dir" "$threads"
