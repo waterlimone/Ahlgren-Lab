@@ -17,9 +17,9 @@ conda activate qiime2-2022.2
 qiime cutadapt trim-paired \
 --i-demultiplexed-sequences "$1"/qiimeRecords/sample.qza \
 --o-trimmed-sequences "$1"/qiimeRecords/sample_trimmed.qza \
---p-cores 4 \
---p-front-f ^"$2" \
---p-front-r ^"$3" \
+--p-cores "$2" \
+--p-front-f ^"$3" \
+--p-front-r ^"$4" \
 --p-error-rate 0.2 \
 --p-no-indels
 

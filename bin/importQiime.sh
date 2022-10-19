@@ -6,7 +6,7 @@ conda activate qiime2-2022.2
 
 # Makes and moves the fastq.gz files into the reads folder.
 mkdir "$1"/reads
-mv ./*fastq.gz reads/
+mv "$1"/*fastq.gz "$1"/reads/
 
 # Makes the qiimeRecords directory and imports the paired sequence data
 # to qiimeRecords/sample.qza
