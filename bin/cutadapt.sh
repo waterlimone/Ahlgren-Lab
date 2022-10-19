@@ -1,4 +1,4 @@
-#!/usr/bin/env -S bash -i
+#!/bin/bash -i
 
 # Cuts off the primers/adapters of the samples.
 

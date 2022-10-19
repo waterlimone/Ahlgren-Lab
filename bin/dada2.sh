@@ -1,4 +1,4 @@
-#!/usr/bin/env -S bash -i
+#!/bin/bash -i
 
 conda activate qiime2-2022.2
 
