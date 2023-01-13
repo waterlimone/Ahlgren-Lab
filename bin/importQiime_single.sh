@@ -11,7 +11,7 @@ mv "$1"/*R1*fastq.gz "$1"/reads/
 # Makes the qiimeRecords directory and imports the paired sequence data
 # to qiimeRecords/sample.qza
 mkdir "$1"/qiimeRecords
-qiime tools import --type 'SampleData[PairedEndSequencesWithQuality]' \
+qiime tools import --type 'SampleData[SequencesWithQuality]' \
 --input-path "$1"/reads/ \
 --input-format CasavaOneEightSingleLanePerSampleDirFmt \
 --output-path "$1"/qiimeRecords/sample.qza

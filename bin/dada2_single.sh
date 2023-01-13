@@ -11,7 +11,7 @@ mkdir "$1"/qiimeRecords/dada2
   # --o-table           | Output path for feature table.
   # --o-representative..| Sequence file output.
   # --o-denoising-stats | Path to denoising stats file.
-qiime dada2 denoise-paired --i-demultiplexed-seqs "$1"/qiimeRecords/sample_trimmed.qza \
+qiime dada2 denoise-single --i-demultiplexed-seqs "$1"/qiimeRecords/sample_trimmed.qza \
 --p-trunc-len 0 \
 --p-n-threads "$2" \
 --o-table "$1"/qiimeRecords/dada2/sample_table.qza \
